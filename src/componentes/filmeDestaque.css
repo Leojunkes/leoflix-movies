@@ -1,0 +1,80 @@
+.destaque{
+    height: 100vh;
+
+}
+.destaque--vertical{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to top, #111 10% , transparent 90%);
+}
+.destaque--horizontal{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to right, #111 30%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    padding-left: 30px;
+    padding-bottom: 150px;
+    padding-top: 70px;
+
+}
+.destaque--name{
+    font-size: 60px;
+    font-weight: bold;
+}
+.destaque--info{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.destaque--points{
+    display: inline-block;
+    color: #46d369;
+}
+.destaque--ano{
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.destaque--seasons{
+    display: inline-block;
+}
+.destaque--description{
+    margin-top: 15px;
+    font-size: 20px;
+    color: #999;
+    max-width:40% ;
+}
+.destaque--buttons{
+    margin-top:15px ;
+
+}
+.assistir--Button, .lista--Button{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2;
+}
+.assistir--Button:hover , .lista--Button:hover{
+    opacity: 0.7;
+}
+.assistir--Button{
+    background-color: #fff;
+    color: #000;
+
+}
+.lista--Button{
+    background-color: #333;
+    color: #fff;
+}
+.destaque--genres{
+    margin-top: 15px;
+    font-size: 18px;
+    color: #999;
+}

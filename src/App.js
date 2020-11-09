@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from  'react';
 import './App.css';
+import FilmeDestaque from './componentes/filmeDestaque';
+import FilmesLinha from './componentes/filmesLinha';
+import Header from './componentes/header';
+import Tmdb from './ThemovieDB/Tmdb';
+
 
 function App() {
+
+  const [movielist, setMovieList] = useState([]);
+  const [destaqueData, setDestaquedata] = useState([]);
+  
+
+  useEffect(()=>{
+    const loadALL = async()=>{
+      let list = await Tmdb.getHomeList();
+      setMovieList(list);
+      
+      let originals = list.filter(i=>i.slug === 'originals');
+      let randomEscolha = Math.floor(Math.random() * (originals[0].items.results.length -1));
+      let escolha = originals[0].items.results[randomEscolha];
+      let escolhaInfo = await Tmdb.getMovieInfo(escolha.id, 'tv');
+      setDestaquedata(escolhaInfo);
+    }
+    loadALL()
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <Header/>
+      
+      {destaqueData && 
+        <FilmeDestaque item={destaqueData}/>
+}
+      <section className="lists">
+        {movielist.map((item, key)=>(
+          <FilmesLinha key={key} title={item.title} items={item.items}/>
+        ))}
+      </section>
+    </div> 
+    
   );
 }
 
