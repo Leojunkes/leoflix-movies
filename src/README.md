@@ -2,8 +2,8 @@
 
 ## Preview
 
-<img src="./imagens/imgReadme2.png" alt="Calculo-imc" width="350"/>
-<img src="./imagens/imgReadme.png" alt="Calculo-imc" width="350"/>
+<img src="./imagens/imgReadme2.png" alt="Calculo-imc" width="500"/>
+<img src="./imagens/imgReadme.png" alt="Calculo-imc" width="500"/>
 
 
 ## Sobre o LeoJunkesFLix
